@@ -51,6 +51,7 @@ Ca affichera uniquement "LIBRE", en vert, puis "OCCUPE" en rouge. Les deux mots 
 
 # Dépendances
 
+- Être root lors de toutes les étapes
 - pip, pour télécharger des modules Python additionnels : ```sudo apt install python3-pip```
 - Module watchdog utilisé dans `panel.py` : ```python -m pip install -U watchdog```
 
