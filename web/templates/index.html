@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block title %} Panneau d'affichage {% endblock %}
+{% block css %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+{% endblock %}
+{% block body %}
+<div style="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form class="Containers" action="{{ url_for("set") }}" method="POST">
+
+                <div class="form-group">
+                    <label for="texte">Texte à afficher</label>
+                    <input type="input" class="form-control" id="texte" name="texte" aria-describedby="textHelp" value="{{ texte }}">
+                    <small id="textHelp" class="form-text text-muted" >Texte à afficher</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="posX">Décalage en pixel sur l'axe horizontal (peut être négatif)</label>
+	            <input type="input" class="form-control" id="posX" name="posX" aria-describedby="posXhelp" value="{{ posX }}">
+                    <small id="posXhelp" class="form-text text-muted" >0 par défaut, recommandé de la définir</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="posY">Décalage en pixel sur l'axe vertical (peut être négatif)</label>
+                    <input type="input" class="form-control" id="posY" name="posY" aria-describedby="posYhelp" value="{{ posY }}">
+                    <small id="posYhelp" class="form-text text-muted" >0 par défaut, recommandé de la définir</small>
+                </div> 
+
+                <div class="form-group">
+                    <input type="color" id="couleur" name="couleur" value="{{ couleur }}">
+                        <label for="couleur">Couleur du texte (défaut : blanc)</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="color" id="couleur_fond" name="couleur_fond" value="{{ couleur_fond }}">
+                        <label for="couleur_fond">Couleur de fond (défaut : noir)</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="alt_texte">Texte secondaire à afficher</label>
+                    <input type="input" class="form-control" id="alt_texte" name="alt_texte" aria-describedby="altTextHelp" value="{{ alt_texte }}">
+                    <small id="altTextHelp" class="form-text text-muted" >Texte secondaire à afficher (vide = un texte seulement)</small>
+                </div>
+
+                 <div class="form-group">
+                    <label for="alt_posX">Décalage en pixel sur l'axe horizontal (peut être négatif)</label>
+                    <input type="input" class="form-control" id="alt_posX" name="alt_posX" aria-describedby="alt_posXhelp" value="{{ alt_posX }}">
+                    <small id="alt_posXhelp" class="form-text text-muted" >0 par défaut</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="alt_posY">Décalage en pixel sur l'axe vertical (peut être négatif)</label>
+                    <input type="input" class="form-control" id="alt_posY" name="alt_posY" aria-describedby="alt_posYhelp" value="{{ alt_posY }}">
+                    <small id="alt_posYhelp" class="form-text text-muted" >0 par défaut</small>
+                </div>
+
+                <div class="form-group">
+                    <input type="color" id="alt_couleur" name="alt_couleur" value="{{ alt_couleur }}">
+                        <label for="alt_couleur">Couleur du texte secondaire (défaut : blanc)</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="color" id="alt_couleur_fond" name="alt_couleur_fond" value="{{ alt_couleur_fond }}">
+                        <label for="alt_couleur_fond">Couleur de fond du second texte (défaut : noir)</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="temps">Temps d'attente en seconde entre l'affichage des 2 textes, utilisé aussi dans le mode standby</label>
+                    <input type="input" class="form-control" id="temps" name="temps" aria-describedby="tempshelp" value="{{ temps }}">
+                    <small id="tempshelp" class="form-text text-muted" >10 par défaut, recommandé de la définir</small>
+                </div>
+
+                <div class="form-group justify-content-right">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

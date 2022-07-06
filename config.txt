@@ -1,0 +1,8 @@
+host=0.0.0.0
+port=80
+command_path=/opt/panel/messages/commande.txt
+app_directory=/opt/panel
+last_message=/opt/panel/lastmessage/lastmessage.txt
+directory_to_watch=/opt/panel/messages
+bash_path=/opt/panel/panel.sh
+#ip_api=http://192.168.1.102:9210/variables
